@@ -2,7 +2,7 @@
 # TERRAFORM MODULE VALIDATION
 #==============================================================================
 
-name: Terraform validation
+name: 01 - Validate Terraform Modules
 
 #==============================================================================
 # WORKFLOW TRIGGERS
@@ -32,7 +32,7 @@ concurrency:
 
 jobs:
   validate:
-    name: Validate ${{ matrix.module }}
+    name: 01 - Validate ${{ matrix.module }}
     strategy:
       fail-fast: false
       matrix:
@@ -55,7 +55,7 @@ jobs:
           - random-password
           - vcn
           - vault-secret
-    uses: bharathadigopula/github-pipeline-templates/.github/workflows/terraform-validate.yml@v0.8.11
+    uses: bharathcloudops/github-pipeline-templates/.github/workflows/terraform-validate.yml@v0.9.4
     with:
       working_directory: ${{ matrix.module }}
     permissions:
