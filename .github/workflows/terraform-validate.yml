@@ -55,7 +55,7 @@ jobs:
           - random-password
           - vcn
           - vault-secret
-    uses: bharathcloudops/github-pipeline-templates/.github/workflows/terraform-validate.yml@v0.9.4
+    uses: bharathcloudops/github-pipeline-templates/.github/workflows/terraform-validate.yml@v0.9.9
     with:
       working_directory: ${{ matrix.module }}
     permissions:
